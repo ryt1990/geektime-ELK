@@ -34,6 +34,14 @@ GET /_cat/indices/kibana*?pri&v&h=health,index,pri,rep,docs,count,tm
 # 查看每个索引所占用的内存
 GET /_cat/indices?v&h=index,tm&s=tm:desc
 
+# Elasticsearch 更新索引settings
+POST movies/_close
+PUT movies/_settings
+{
+  "number_of_replicas":0
+}
+POST movies/_open
+
 ```
 
 
