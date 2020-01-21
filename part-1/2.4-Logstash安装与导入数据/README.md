@@ -13,9 +13,10 @@
 input {
   file {
     #windows系统需加'[]'
+    # Windows：sincedb_path => "NUL" ；Linux：sincedb_path => "/dev/null"
     path => ["C:/logstash-7.5.1/movielens/movies.csv"]
     start_position => "beginning"
-    sincedb_path => "C:/logstash-7.5.1/movielens/data"
+    sincedb_path => "NUL"
   }
 }
 
