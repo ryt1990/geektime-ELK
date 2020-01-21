@@ -12,9 +12,10 @@
 #path修改为,你实际的movies.csv路径
 input {
   file {
-    path => "YOUR_FULL_PATH_OF_movies.csv"
+    #windows系统需加'[]'
+    path => ["C:/logstash-7.5.1/movielens/movies.csv"]
     start_position => "beginning"
-    sincedb_path => "/dev/null"
+    sincedb_path => "C:/logstash-7.5.1/movielens/data"
   }
 }
 
